@@ -90,7 +90,7 @@ footer {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #ecf0f1;
 }
-footer{
+footer {
   margin-top: 1%;
   padding-bottom: 1%;
 }
@@ -159,7 +159,7 @@ main a:hover {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .certificate-image {
     width: 80%;
     height: 70%;
@@ -176,11 +176,12 @@ main a:hover {
   header {
     width: 200px;
   }
-  main,footer {
+  main,
+  footer {
     margin-left: 240px;
     padding: 20px;
   }
-  footer{
+  footer {
     margin-top: 2%;
   }
 }
