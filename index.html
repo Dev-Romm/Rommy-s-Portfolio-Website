@@ -3,242 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Rommedahl Peter Magana's Portfolio Website"
-    />
-    <meta
-      name="keywords"
-      content="Rommedahl, Portfolio, Web Development, Projects"
-    />
-    <title>
-      Rommedahl Peter Magana | Software Developer - Cloud engineer - Computer
-      Networks
-    </title>
+    <meta name="description" content="Rommedahl Peter Magana's Portfolio Website" />
+    <meta name="keywords" content="Rommedahl, Portfolio, Web Development, Projects" />
+    <title>Rommedahl Peter Magana | Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link href="tab-image.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
   <body>
+    <input id="theme-toggle" class="theme-toggle" type="checkbox" aria-label="Toggle theme" />
     <header>
-      <img src="img1.jpg" alt="Rommedahl's Image" class="profile-image" />
+      <img src="img1.jpg" alt="Profile" class="profile-image" />
       <h1>Rommedahl Peter Magana</h1>
-      <h2>A Tech Engineer Aiming to Surpass Perfection</h2>
+      <h2>Software Developer · Cloud Engineer · Network Enthusiast . AI/ML Specialist</h2>
+      <label for="theme-toggle" class="theme-toggle-label" title="Toggle light / dark">
+        <i class="fa fa-sun-o"></i>
+        <i class="fa fa-moon-o"></i>
+      </label>
 
       <nav>
         <ul>
-          <li>
-            <a class="about-btn" href="#about"
-              ><i class="fa fa-user"></i> About</a
-            >
-          </li>
-          <li>
-            <a href="#skills"><i class="fa fa-cogs"></i> Skills</a>
-          </li>
-          <li>
-            <a href="#achievements"
-              ><i class="fa fa-trophy"></i> Achievements</a
-            >
-          </li>
-          <li>
-            <a href="#projects"><i class="fa fa-clipboard"></i> Projects</a>
-          </li>
-          <li>
-            <a href="#goals"><i class="fa fa-bullseye"></i> Goals</a>
-          </li>
-          <li>
-            <a href="#contact"><i class="fa fa-address-book"></i> Contact</a>
-          </li>
+          <li><a class="about-btn active" href="index.html"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="resume.html"><i class="fa fa-file-text"></i> Resume</a></li>
+          <li><a href="projects.html"><i class="fa fa-briefcase"></i> Projects</a></li>
+          <li><a href="blog.html"><i class="fa fa-pencil"></i> Blog</a></li>
+          <li><a href="contact.html"><i class="fa fa-address-book"></i> Contact</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
-      <div id="about">
-        <h2>About Me</h2>
-        <p>
-          I am a software developer, network administrator and an aspiring AWS
-          Solutions Architect, studying at the Multimedia University of Kenya,
-          PLP and ALX Academy. My main initiative is to provide suitalble
-          solutions to all sustainable development goals by leveraging
-          technology, throughout my career.
-        </p>
-        <form action="MaganaCV.docx" method="get" target="_blank">
+      <section class="hero container">
+        <div class="top-card">
+          <img src="overview.jpeg" alt="Profile" class="overview-image" />
+          <p style="margin:6px 0 12px 0; color:#299fca; font-weight:600;">I build scalable, high-performance web applications and resilient cloud infrastructure.</p>
+          <form action="MaganaCV.docx" method="get" target="_blank">
           <button type="submit">
             Click here to download my CV <i class="fa fa-download"></i>
           </button>
         </form>
-      </div>
-      <div id="skills">
-        <h2>My Skills</h2>
-        <ul>
-          <li>
-            Proficiency in Web Development using HTML, CSS, JavaScript and
-            ReactJS.
-          </li>
-          <li>
-            Practical knowledge in implementing data structures and algorithms
-            using Python.
-          </li>
-          <li>Proficiency in creating and managing databases using SQL.</li>
-          <li>Capability of collaborating and carrying out team projects.</li>
-          <li>
-            Configuration and management of Cisco and Huawei routers, switches
-            and access points.
-          </li>
-          <li>Implementation of IPv4 and IPv6 addressing and subnetting.</li>
-          <li>Setting up LANs.</li>
-          <li>Customer empathy.</li>
-          <li>Human-centered design.</li>
-        </ul>
-      </div>
-      <div id="achievements">
-        <h2>My Achievements</h2>
-        <ul>
-          <li>
-            I was an attache at the ICT Authority of Kenya for 3 months, serving
-            as a network administrator.
-          </li>
-          <li>
-            I studied CCNA 1,2,3 and HCIA-Datacom and managed to obtain the
-            certificates.
-          </li>
-          <li>
-            I studied and obtain certifications on web development essentials in
-            HTML, CSS and JavaScript from freeCodeCamp.
-          </li>
-        </ul>
-      </div>
-      <div id="certificates">
-        <h2>My Certificates and Certifications</h2>
-        <div class="certs-container">
-          <div class="pic-item">
-            <img src="fcc1.png" alt="Certificate 1" class="certificate-image" />
-            <p>1. Responsive Web Design</p>
-          </div>
-          <div class="pic-item">
-            <img src="fcc2.png" alt="Certificate 2" class="certificate-image" />
-            <p>2. JavaScript Algorithms and Data Structures</p>
-          </div>
-          <div class="pic-item">
-            <img
-              src="ccna1.png"
-              alt="Certificate 3"
-              class="certificate-image"
-            />
-            <p>3. CCNA 1</p>
-          </div>
-          <div class="pic-item">
-            <img
-              src="ccna2.png"
-              alt="Certificate 4"
-              class="certificate-image"
-            />
-            <p>4. CCNA 2</p>
-          </div>
-          <div class="pic-item">
-            <img
-              src="ccna3.png"
-              alt="Certificate 5"
-              class="certificate-image"
-            />
-            <p>5. CCNA 3</p>
-          </div>
-          <div class="pic-item">
-            <img
-              src="hcia cert.png"
-              alt="Certificate 6"
-              class="certificate-image"
-            />
-            <p>6. HCIA-Datacom</p>
-          </div>
         </div>
-      </div>
-      <div id="projects">
-        <h2>My Projects</h2>
-        <ol>
-          <li>
-            <a
-              href="https://github.com/Dev-Romm/Role-Playing-Game.git"
-              target="_blank"
-              >Role-Playing Game</a
-            >: this is an action game built using HTML, CSS and JavaScript.
-          </li>
-          <li>
-            <a
-              href="https://github.com/Dev-Romm/Statistics-Calculator.git"
-              target="_blank"
-              >Statistics Calculator</a
-            >: this is a tool for doing statistical calculations built using
-            HTML, CSS and JavaScript.
-          </li>
-          <li>
-            <a href="https://github.com/Dev-Romm/Piano.git" target="_blank"
-              >Piano</a
-            >: this is a piano interface built using HTML and CSS.
-          </li>
-          <li>
-            <a
-              href="https://github.com/Dev-Romm/Random-Background-Color-Changer.git"
-              target="_blank"
-              >Random Background Colour Changer</a
-            >: this is an webpage which randomly changes its background colour,
-            built using HTML, CSS and JavaScript.
-          </li>
-        </ol>
-      </div>
-      <div id="goals">
-        <h2>My Current Goals</h2>
-        <ul>
-          <li>
-            Obtaining AWS Cloud Practitioner and Solution Architect Certificates
-            by the end of 2025.
-          </li>
-          <li>Becoming a full-fledged MERN stack developer by mid 2025.</li>
-        </ul>
-      </div>
-      <div id="contact">
-        <h2>Contact Me</h2>
-        <p>
-          If you are looking for a MERN stack developer or a cloud engineer
-          you've just landed at the right guy.
-        </p>
-        <p>
-          I'm always open to brainstorming, empowering, creating awareness on my
-          fields of specialization or service delivery.
-        </p>
-        <p>Feel free to reach out to me via the following platforms:</p>
-        <div class="platforms-container">
-          <div class="platfform1">
-            <p>Gmail</p>
-            <p>
-              <a href="https://mail.google.com/" target="_blank"
-                >rommymagana5@gmail.com <i class="fa fa-envelope"></i
-              ></a>
-            </p>
-          </div>
-          <div class="platfform2">
-            <p>LinkedIn</p>
-            <p>
-              <a
-                href="https://www.linkedin.com/in/rommedahl-peter-magana-338955276/"
-                target="_blank"
-                >Rommedahl Peter Magana <i class="fa fa-linkedin"></i
-              ></a>
-            </p>
-          </div>
-          <div class="platfform3">
-            <p>Github</p>
-            <p>
-              <a href="https://github.com/Dev-Romm" target="_blank"
-                >Dev-Romm <i class="fa fa-github"></i
-              ></a>
-            </p>
-          </div>
+
+        <div class="intro">
+          <h1>Hello — I build reliable, production-ready systems.</h1>
+          <p class="lead">I am a versatile developer focusing on modern web stacks (Python, JavaScript, React, Next.js) and strong SQL-backed data design. I combine software engineering with cloud architecture and networking fundamentals to deliver end-to-end solutions.</p>
+          <p style="margin-top:12px;">Currently exploring AI/ML workflows and applying cloud-native patterns to accelerate development.</p>
         </div>
-      </div>
+      </section>
+
+      <section class="container">
+        <div class="card">
+          <h2>Core Expertise</h2>
+          <ul>
+            <li>Frontend: HTML5, CSS, JavaScript, ReactJS, NextJS, Tailwind CSS</li>
+            <li>Backend: Python (APIs, automation), SQL databases, REST/GraphQL</li>
+            <li>Cloud: AWS (Solutions Architect - Associate), practical GCP experience</li>
+            <li>Networking: Cisco & Huawei fundamentals, routing & switching, IP design</li>
+            <li>Security: basic OSINT and vulnerability testing with Kali Linux</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Certifications & Cloud</h2>
+          <p>AWS Certified Solutions Architect - Associate. Hands-on with cloud design patterns, VPCs, IAM, S3, and compute platforms. Completed Google Cloud Skills Boost exercises to broaden multi-cloud understanding.</p>
+        </div>
+
+        <div class="card">
+          <h2>Networking & Infrastructure</h2>
+          <p>Certified network fundamentals in Cisco and Huawei. I design small-to-medium networks, apply ACLs, and use tools for planning and testing. I bring infrastructure thinking into application architecture.</p>
+        </div>
+
+        <div class="card">
+          <h2>Cybersecurity Interests</h2>
+          <p>Practical exposure to Kali Linux for reconnaissance and vulnerability testing. I follow secure-by-design principles and aim to integrate defensive controls early in development.</p>
+        </div>
+
+        <div class="card">
+          <h2>Collaboration & AI</h2>
+          <p>I thrive on working with diverse teams — combining perspectives leads to better solutions. I'm expanding into AI/ML and enjoy sharing knowledge with the community.</p>
+          <p style="margin-top:10px;"><a href="contact.html">Let's connect</a> — I'm always open to collaborations and knowledge-sharing.</p>
+        </div>
+      </section>
     </main>
+
     <footer>
       <p>&copy; 2025 Rommedahl P. Magana. All rights reserved.</p>
     </footer>

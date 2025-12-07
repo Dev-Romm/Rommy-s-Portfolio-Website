@@ -1,6 +1,14 @@
 * {
   scroll-behavior: smooth;
 }
+
+/* Site background gradient and theme variables (light default) */
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f7fbfc 0%, #e6f2f4 100%);
+  color: #203746;
+  transition: background 0.45s ease, color 0.35s ease;
+}
 .profile-image {
   width: 150px;
   height: 150px;
@@ -16,11 +24,85 @@ header {
   left: 0;
   text-align: center;
   height: 100vh;
-  width: 250px;
-  background-color: #2c3e50;
-  color: white;
-  padding: 20px;
+  width: 260px;
+  background: linear-gradient(180deg,#2c3e50 0%,#203746 100%);
+  color: #ffffff;
+  padding: 28px 18px;
   align-items: center;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.12);
+}
+.overview-image{
+  width: 170px;
+  height: 170px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+/* Theme toggle (CSS-only) */
+.theme-toggle {
+  position: absolute;
+  left: -9999px;
+}
+.theme-toggle-label {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 28px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.theme-toggle-label .fa-moon-o { display: none; }
+
+/* When toggle is checked: dark theme styles applied using sibling selectors */
+.theme-toggle:checked ~ header {
+  background: linear-gradient(180deg,#0f1724 0%,#071824 100%);
+  color: #e6f0f2;
+}
+.theme-toggle:checked ~ header .theme-toggle-label {
+  background: rgba(255,255,255,0.06);
+}
+.theme-toggle:checked ~ header .theme-toggle-label .fa-sun-o { display: none; }
+.theme-toggle:checked ~ header .theme-toggle-label .fa-moon-o { display: inline-block; }
+/* Removed empty ruleset for .theme-toggle:checked ~ body, .theme-toggle:checked ~ main */
+.theme-toggle:checked ~ main {
+  background: linear-gradient(180deg,#071118 0%, #071a20 100%);
+  color: #cfeff3;
+}
+.theme-toggle:checked ~ footer {
+  color: #9fb7bd;
+}
+.theme-toggle:checked ~ main .card {
+  background: rgba(8,12,16,0.45);
+  color: #eaf6f8;
+  box-shadow: none;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.theme-toggle:checked ~ .container .card {
+  background: rgba(8,12,16,0.45);
+}
+.theme-toggle:checked ~ nav a { color: #e6f0f2; }
+.theme-toggle:checked ~ nav a:hover { background-color: rgba(255,255,255,0.04); }
+
+/* Improve contrast for buttons in dark mode */
+.theme-toggle:checked ~ button {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Ensure hero/intro text is readable in dark mode (overrides specific light-mode colors) */
+.theme-toggle:checked ~ main .hero .intro h1,
+.theme-toggle:checked ~ main .hero .intro h2 {
+  color: #cfeff3;
+}
+.theme-toggle:checked ~ main .hero .intro p.lead,
+.theme-toggle:checked ~ main .hero .intro p {
+  color: #9fc6cb;
 }
 
 button {
@@ -30,7 +112,7 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
   display: block;
   margin: 0 auto;
@@ -38,8 +120,8 @@ button {
 
 button:hover {
   background-color: #3498db;
-  transition: all 1s ease-in-out;
-  font-size: 1.1em;
+  transition: all 1.5s ease-in-out;
+  font-size: 1em;
 }
 button:active {
   background-color: #2980b9;
@@ -49,7 +131,9 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 100%;
 }
 nav a {
   color: white;
@@ -65,6 +149,18 @@ nav a:hover {
   padding: 8px 7px;
   transition: all 0.7s ease;
   border-radius: 5px;
+}
+/* Active/current page link style */
+nav a.active {
+  background-color: #2383b3;
+  padding: 8px 7px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: 700;
+}
+.theme-toggle:checked ~ nav a.active {
+  background-color: rgba(255,255,255,0.06);
+  color: #e6f0f2;
 }
 nav ul {
   list-style-type: none;
@@ -85,15 +181,24 @@ nav ul li a.about-btn {
 }
 main,
 footer {
-  margin-left: 290px;
-  padding: 20px 40px 0 20px;
+  margin-left: 300px;
+  padding: 28px 40px 40px 32px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #ecf0f1;
+  background-color: #f5f7f8;
+  margin-bottom: 0%;
 }
 footer {
-  margin-top: 1%;
-  padding-bottom: 1%;
+ 
+  padding-bottom: 2%;
+  color: #6b6b6b;
 }
+/* Dark-mode footer override (ensure it overrides the light background) */
+.theme-toggle:checked ~ footer {
+  background: linear-gradient(180deg,#071118 0%, #071a20 100%);
+  color: #9fb7bd;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.theme-toggle:checked ~ footer p { color: #9fb7bd; }
 .certs-container {
   display: flex;
   flex-wrap: wrap;
@@ -132,6 +237,101 @@ main a:hover {
   border-radius: 5px;
   transition: all 0.5s ease;
 }
+
+/* Layout helpers and cards */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.hero .intro h1 {
+  margin: 0 0 6px 0;
+  font-size: 2.2rem;
+  color: #203746;
+}
+
+/* Top card variant used on the hero/intro area: center contents and add roomy padding */
+.top-card {
+  background: white;
+  padding: 32px 28px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(16,24,32,0.09);
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 420px;
+  width: 80%;
+  gap: 5px;
+}
+.hero .intro p.lead {
+  margin: 0;
+  color: #3c606b;
+  font-size: 1.05rem;
+}
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(16,24,32,0.06);
+  margin-bottom: 16px;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.project-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.project-card h3 {
+  margin: 8px 0 6px 0;
+}
+.lab-item {
+  margin-bottom: 14px;
+}
+.contact-list {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.contact-list a {
+  color: #203746;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Blog list and post styles */
+.blog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.post-card {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.post-card a {
+  font-weight: 700;
+  color: #203746;
+  text-decoration: none;
+}
+.post-card .muted {
+  color: #6b6b6b;
+  font-size: 0.95em;
+  margin: 6px 0 0 0;
+}
+
 @media screen and (max-width: 544px) {
   body {
     margin: 0;
