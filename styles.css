@@ -346,14 +346,22 @@ main a:hover {
   body {
     margin: 0;
   }
+  /* Stack hero items on small screens: top-card above intro */
+  .hero{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
   header {
-    width: 90%;
+    width: 90vw;
     height: 75vh;
     position: relative;
     display: block;
     margin: 0 auto;
     text-align: center;
     border: 3px solid #2980b9;
+    font-size: 1em;
   }
  
   header nav{
@@ -396,5 +404,17 @@ main a:hover {
   }
   footer {
     margin-top: 2%;
+  }
+  /* Slightly narrower hero column for small tablets */
+  .hero {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .top-card {
+    max-width: 320px;
+    width: 100%;
+    margin: 0;
   }
 }
